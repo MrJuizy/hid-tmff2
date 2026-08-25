@@ -57,8 +57,8 @@ manually building from source (untested in this fork). If you're unsure which to
 go with DKMS — it will automatically recompile the driver
 whenever needed and is the only method verified to work with the fixes in this fork.
 
-An AUR package is also available:
-[hid-tmff2-dkms-git](https://aur.archlinux.org/packages/hid-tmff2-dkms-git)
+> **⚠️ NOTE: This fork is NOT available in the AUR.**  
+> The AUR package [hid-tmff2-dkms-git](https://aur.archlinux.org/packages/hid-tmff2-dkms-git) tracks the upstream repository, **not this fork**. Install manually using the DKMS instructions below to get the T598 fixes.
 
 ### Dependencies
 
