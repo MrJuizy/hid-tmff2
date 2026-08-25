@@ -10,6 +10,7 @@ install: deps/hid-tminit
 .PHONY: udev-rules
 udev-rules:
 	install -m 0644 udev/99-thrustmaster.rules /etc/udev/rules.d/
+	install -m 0644 udev/hid-tmff2.conf /etc/modprobe.d/
 
 .PHONY: steamdeck-rules
 steamdeck-rules:
