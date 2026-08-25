@@ -704,7 +704,10 @@ static int tmff2_probe(struct hid_device *hdev, const struct hid_device_id *id)
 		case TMT248_PC_ID: /* shared with T598, distinguish by bcdDevice */
          {
                         struct usb_device *usbdev = to_usb_device(hdev->dev.parent->parent);
-                        if (le16_to_cpu(usbdev->descriptor.bcdDevice) == 0x0598) {
+                        /* The T598 reports either 5.98 or 5.99 firmware version in bcdDevice */
+                        if (le16_to_cpu(usbdev->descriptor.bcdDevice) == 0x0598 || 
+                            le16_to_cpu(usbdev->descriptor.bcdDevice) == 0x0599 ||
+                            le16_to_cpu(usbdev->descriptor.bcdDevice) == 0x0600) {
                                 if ((ret = t598_populate_api(tmff2)))
                                          goto wheel_err;
                         } else {
