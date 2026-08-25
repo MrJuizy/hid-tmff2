@@ -1,5 +1,15 @@
 # Linux kernel module for Thrustmaster T300RS, T248 and (experimental) TX, T128, T598, T-GT II, TS-PC and TS-XW wheels
 
+> **⚠️ MRJUIZY FORK - VIBECODED T598 FIXES ⚠️**  
+> This repository fork contains specific, vibecoded fixes for the Thrustmaster T598 Steering Wheel to get Force Feedback working correctly on Linux.  
+> 
+> **Applied Fixes in this fork:**
+> * **Merged PR #205:** Added base Force Feedback mapping for the Thrustmaster T598.
+> * **Firmware bcdDevice Fix:** Modified `tmff2_probe` to correctly identify T598 firmwares 5.98, 5.99, and 6.00 (preventing it from defaulting back to T248 behavior and breaking FFB).
+> * **xpad Hijack Prevention:** Added udev rules to unbind `xpad`, preventing the generic Xbox controller driver from hijacking the wheel during its initialization phase (ID `b6a5`).
+> * **USB Autosuspend Fix:** Added udev rules disabling USB autosuspend (`power/autosuspend="-1"`) to prevent the wheel's FFB from dying after 2 seconds due to the Direct Drive safety watchdog starving.
+> * **URB Flood Fix:** Added a default modprobe configuration (`timer_msecs=16`) to decrease the update aggressiveness, stopping the USB controller from locking up with `-1 (EPERM)` buffer errors.
+
 > **DISCLAIMER:** The module is ready for use in most force
 > feedback games, supports rangesetting as well as gain and autocentering along
 > with most force feedback effects. While I haven't personally come across any
