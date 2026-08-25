@@ -107,7 +107,7 @@ sudo yum install linuxconsoletools # Fedora-based
 + Unplug wheel from computer
 + Run
   ```shell
-  git clone --recurse-submodules https://github.com/Kimplul/hid-tmff2.git
+  git clone --recurse-submodules https://github.com/MrJuizy/hid-tmff2.git
   cd hid-tmff2
   sudo ./dkms/dkms-install.sh
   sudo make udev-rules # optional but should fix some common issues
