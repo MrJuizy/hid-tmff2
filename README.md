@@ -48,10 +48,14 @@ TS-PC support was contributed by
 
 ## Installation
 
-You can either install this kernel module by using DKMS or
-manually building from source. If you're unsure which to pick,
-go with DKMS, it will automatically recompile the driver
-whenever needed.
+> **⚠️ IMPORTANT: Only the DKMS installation method has been tested in this fork. ⚠️**  
+> **The manual build-from-source method is NOT tested and may not work correctly.**  
+> **Use DKMS unless you know what you are doing.**
+
+You can install this kernel module using DKMS (recommended and tested) or
+manually building from source (untested in this fork). If you're unsure which to pick,
+go with DKMS — it will automatically recompile the driver
+whenever needed and is the only method verified to work with the fixes in this fork.
 
 An AUR package is also available:
 [hid-tmff2-dkms-git](https://aur.archlinux.org/packages/hid-tmff2-dkms-git)
@@ -84,7 +88,7 @@ sudo pacman -S joyutils            # Arch-based
 sudo yum install linuxconsoletools # Fedora-based
 ```
 
-#### Manual installation
+#### Manual installation *(NOT tested in this fork — use DKMS instead)*
 + Unplug wheel from computer
 + Run
   ```shell
@@ -98,7 +102,7 @@ sudo yum install linuxconsoletools # Fedora-based
 + Plug wheel back in
 + Reboot *(Optional, yet Recommended)*
 
-#### DKMS (Dynamic Kernel Module Support)
+#### DKMS (Dynamic Kernel Module Support) — ✅ Tested & Recommended
 
 + Unplug wheel from computer
 + Run
